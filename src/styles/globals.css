@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+  /* Font */
+
+  @font-face {
+    font-family: Poppins;
+    src: url(/fonts/Poppins-Regular.tff) format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url(/fonts/Poppins-Bold.ttf) format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@theme {
+    /* Colors */
+
+  /* Primary Colors */
+  --color-primary-cyan: hsl(180, 66%, 49%);
+  --color-primary-violet-dark: hsl(257, 27%, 26%);
+  
+  /* Secondary Colors */
+  --color-secondary-red: hsl(0, 87%, 67%);
+  
+  /* Neutral Colors */
+  --color-neutral-gray-light: hsl(0, 0%, 75%);
+  --color-neutral-gray: hsl(257, 7%, 63%);
+  --color-neutral-gray-dark: hsl(255, 11%, 22%);
+  --color-neutral-gray-very-dark: hsl(260, 8%, 14%);
+
+  /*Font family*/
+  --font-poppins: 'Poppins', sans-serif;
+
+}
+
+body {
+    font-family:var(--font-poppins);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+}
+
+@layer base {
+  .base-bg {
+    @apply bg-cover bg-no-repeat bg-center;
+  }
+
+  .item-center {
+    @apply flex items-center justify-center;
+  }
+
+  .desktop-background-input {
+    @apply min-[1440px]:bg-[url(../../public/images/bg-shorten-desktop.svg)] bg-primary-violet-dark ;
+  } 
+
+  .mobile-background-input {
+    @apply max-[1440px]:bg-[url(../../public/images/bg-shorten-mobile.svg)] bg-primary-violet-dark ;
+  }
+  
+  .promo-background {
+    @apply min-[1440px]:bg-[url(../../public/images/bg-boost-desktop.svg)] bg-primary-violet-dark ;
+  }
+
+  .promo-background-mobile {
+    @apply max-[1440px]:bg-[url(../../public/images/bg-boost-mobile.svg)] bg-primary-violet-dark ;
+  }
+
+  .social-icon {
+    @apply hover:cursor-pointer hover:filter w-6 h-6 hover:brightness-150;
+  }
+
+  .list-item {
+    @apply mb-1 hover:text-primary-cyan cursor-pointer;
+  }
+
+  .error-message {
+    /* deixar a mensagem no inicio ao inves no meio */
+    @apply text-red-500 text-sm mt-1 italic ;
+  }
+
+}
